@@ -37,7 +37,8 @@ and configure:
 ```ruby
 ReportFactory::RSpec.configure do |config|
   config.url = "The url of the ReportFactory server. It's 'http://0.0.0.0:3000' if you're running locally"
-  config.x_api_key = "Your user X_API_KEY"
+  config.project_name = "The name of the project that you are testing. Needs to be previously created in ReportFactory"
+  config.auth_token = "Your user X_API_KEY. Can be found in ReportFactory in your user information"
 end
 ```
 

@@ -4,11 +4,13 @@ module ReportFactory
   module RSpec
     # Defines all configurable attributes of ReportFactory::RSpec
     module Configuration
-      VALID_CONFIG_KEYS = %i[url x_api_key].freeze
+      VALID_CONFIG_KEYS = %i[url project_name auth_token].freeze
 
       DEFAULT_URL = 'http://0.0.0.0:3000'
 
-      DEFAULT_X_API_KEY = nil
+      DEFAULT_PROJECT_NAME = nil
+
+      DEFAULT_AUTH_TOKEN = nil
 
       VALID_CONFIG_KEYS.each { |key| attr_accessor key }
 
