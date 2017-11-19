@@ -10,3 +10,5 @@ module ReportFactory
     # TODO: Add method missing
   end
 end
+
+require 'report_factory/rspec/formatter'

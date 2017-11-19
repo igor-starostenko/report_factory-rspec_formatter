@@ -23,7 +23,7 @@ module ReportFactory
 
       def reset
         VALID_CONFIG_KEYS.each do |key|
-          send("#{key}=", self::Configuration.const_get("DEFAULT_#{key}".upcase))
+          send("#{key}=", Object.const_get("DEFAULT_#{key}".upcase))
         end
       end
     end
