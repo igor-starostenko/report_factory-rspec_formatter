@@ -1,23 +1,30 @@
 # frozen_string_literal: true
 
 require 'net/http'
+require 'json'
+require 'uri'
 
 module ReportFactory
   module Rspec
     # An RSpec formatter that formats json from the test run
     class API
       def self.send_report(report_hash)
-        payload = format_payload(report_hash)
-        Net::HTTP.post_form(create_report_url, format_headers, payload)
+        uri = create_report_url
+        request = Net::HTTP::Post.new(uri.request_uri, format_headers)
+        request.body = format_payload(report_hash).to_json
+        net_http = Net::HTTP.new(uri.host, uri.port)
+        net_http.use_ssl = true if uri.scheme == 'https'
+        net_http.request(request)
       end
 
-      private
-
-      def format_headers
-        { 'X-API-KEY' => x_api_key }
+      def self.format_headers
+        {
+          'Content-Type': 'application/json',
+          'X-API-KEY' => x_api_key
+        }
       end
 
-      def format_payload(report_hash)
+      def self.format_payload(report_hash)
         {
           data: {
             type: 'rspec_report',
@@ -26,19 +33,19 @@ module ReportFactory
         }
       end
 
-      def x_api_key
-        ReportFactory::Rspec::Configuration.auth_token
+      def self.x_api_key
+        ReportFactory::Rspec.auth_token
       end
 
-      def base_url
-        ReportFactory::Rspec::Configuration.url
+      def self.base_url
+        ReportFactory::Rspec.url
       end
 
-      def project_name
-        ReportFactory::Rspec::Configuration.project_name
+      def self.project_name
+        ReportFactory::Rspec.project_name
       end
 
-      def create_report_url
+      def self.create_report_url
         URI.parse("#{base_url}/api/v1/projects/#{project_name}/reports/rspec")
       end
     end

@@ -39,7 +39,9 @@ module ReportFactory
 
       def stop(notification)
         @output_hash[:examples] = notification.examples.map do |example|
-          format_example(example).tap { |hash| format_exception(hash) }
+          format_example(example).tap do |hash|
+            hash[:exception] = format_exception(example)
+          end
         end
       end
 
@@ -49,6 +51,7 @@ module ReportFactory
       end
 
       def close(_notification)
+        return if @output_hash[:examples].empty?
         print_result(ReportFactory::Rspec::API.send_report(@output_hash))
       end
 
@@ -75,17 +78,17 @@ module ReportFactory
       private
 
       def print_result(response)
-        return print_success if response.code == 200
+        return print_success if response.code == '201'
         print_error(response)
       end
 
       def print_success
-        output.write 'Report was successfullty submitted to ReportFactory'
+        output.write "Report was successfullty submitted to ReportFactory\n"
       end
 
       def print_error(response)
         output.write 'Unfortunately the test report could not be submitted'\
-                     " to ReportFactory. Response code: #{response.code}"
+                     " to ReportFactory. #{response.code}: #{response.msg}\n"
       end
 
       def format_example(example)
