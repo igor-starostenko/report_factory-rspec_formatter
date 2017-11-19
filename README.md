@@ -1,8 +1,10 @@
 # ReportFactory::Rspec
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/report_factory/rspec`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+*ReportFactory* helps you save each of your test runs so that they are always available for reports and analytics.
+It consists of three parts:
+1. A [rails server](https://github.com/igor-starostenko/report_factory) that provides an interface via JSON API and saves your test runs in a DB;
+2. A web application which gives you an easy way to configure your test projects and reports (Currently in development);
+3. And a test formatter that automatically sends reports to the server after each test run. This repo is the formatter for RSpec.
 
 ## Installation
 
@@ -22,7 +24,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Before you start using this formatter, make sure you have the [ReportFactory](https://github.com/igor-starostenko/report_factory) server deployed and running.
+
+To setup this formatter to work with your RSpec tests, add this to your `spec_helper.rb` file:
+
+```ruby
+require 'report_factory-rspec'
+```
+
+and configure:
+
+```ruby
+ReportFactory::RSpec.configure do |config|
+  config.url = "The url of the ReportFactory server. It's 'http://0.0.0.0:3000' if you're running locally"
+  config.x_api_key = "Your user X_API_KEY"
+end
+```
+
+Then you can just simply run rspec with `--format ReportFactory::RSpec::Formatter` and your reports will be available on the server after each test run.
+You can add that line to your `.rspec` file if you want it to be the default behavior.
 
 ## Development
 
@@ -32,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/report_factory-rspec. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/igor-starostenko/report_factory-rspec. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +60,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ReportFactory::Rspec project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/report_factory-rspec/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ReportFactory::Rspec project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/igor-starostenko/report_factory-rspec/blob/master/CODE_OF_CONDUCT.md).
