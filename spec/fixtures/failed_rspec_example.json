@@ -1,0 +1,67 @@
+{
+  "version": "3.7.0",
+  "examples": [
+    {
+      "id": "./spec/api_spec.rb[1:1]",
+      "description": "sends report to ReportFactory",
+      "full_description": "ReportFactory::Rspec::API sends report to ReportFactory",
+      "status": "failed",
+      "file_path": "./spec/api_spec.rb",
+      "line_number": 18,
+      "run_time": 0.095626,
+      "pending_message": null,
+      "exception": {
+        "class": "RSpec::Expectations::ExpectationNotMetError",
+        "message": "\nexpected: \"201\"\n     got: \"500\"\n\n(compared using eql?)\n",
+        "backtrace": [
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-support-3.7.0/lib/rspec/support.rb:97:in `block in <module:Support>'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-support-3.7.0/lib/rspec/support.rb:106:in `notify_failure'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/fail_with.rb:35:in `fail_with'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/handler.rb:38:in `handle_failure'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/handler.rb:50:in `block in handle_matcher'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/handler.rb:27:in `with_matcher'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/handler.rb:48:in `handle_matcher'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-expectations-3.7.0/lib/rspec/expectations/expectation_target.rb:65:in `to'",
+          "/Users/igorstar/Workspace/Ruby/report_factory-rspec/spec/api_spec.rb:22:in `block (2 levels) in <top (required)>'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:254:in `instance_exec'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:254:in `block in run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:500:in `block in with_around_and_singleton_context_hooks'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:457:in `block in with_around_example_hooks'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/hooks.rb:466:in `block in run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/hooks.rb:604:in `run_around_example_hooks_for'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/hooks.rb:466:in `run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:457:in `with_around_example_hooks'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:500:in `with_around_and_singleton_context_hooks'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example.rb:251:in `run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example_group.rb:628:in `block in run_examples'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example_group.rb:624:in `map'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example_group.rb:624:in `run_examples'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/example_group.rb:590:in `run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:118:in `block (3 levels) in run_specs'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:118:in `map'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:118:in `block (2 levels) in run_specs'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/configuration.rb:1896:in `with_suite_hooks'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:113:in `block in run_specs'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/reporter.rb:79:in `report'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:112:in `run_specs'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:87:in `run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:71:in `run'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/lib/rspec/core/runner.rb:45:in `invoke'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/gems/rspec-core-3.7.0/exe/rspec:4:in `<top (required)>'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/bin/rspec:23:in `load'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/bin/rspec:23:in `<main>'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/bin/ruby_executable_hooks:15:in `eval'",
+          "/Users/igorstar/.rvm/gems/ruby-2.4.1@report_factory-rspec/bin/ruby_executable_hooks:15:in `<main>'"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "duration": 0.096517,
+    "example_count": 1,
+    "failure_count": 1,
+    "pending_count": 0,
+    "errors_outside_of_examples_count": 0
+  },
+  "summary_line": "1 example, 1 failure"
+}
