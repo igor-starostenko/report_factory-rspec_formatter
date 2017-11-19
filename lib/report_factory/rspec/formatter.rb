@@ -2,14 +2,15 @@
 
 require 'json'
 require 'report_factory/rspec/api'
+require 'rspec/core'
 require 'rspec/core/formatters/base_formatter'
 
 module ReportFactory
-  module RSpec
+  module Rspec
     # An RSpec formatter that formats json from the test run
     class Formatter < RSpec::Core::Formatters::BaseFormatter
-      Formatters.register self, :message, :dump_summary, :dump_profile,
-                          :stop, :seed, :close
+      RSpec::Core::Formatters.register self, :message, :dump_summary,
+           :dump_profile, :stop, :seed, :close
 
       attr_reader :output_hash
 
@@ -48,7 +49,7 @@ module ReportFactory
       end
 
       def close(_notification)
-        print_result(ReportFactory::API.send_report(@output_hash))
+        print_result(ReportFactory::Rspec::API.send_report(@output_hash))
       end
 
       def dump_profile(profile)

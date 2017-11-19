@@ -5,7 +5,7 @@ require 'report_factory/rspec/version'
 
 module ReportFactory
   # Top level namespace module
-  module RSpec
+  module Rspec
     extend Configuration
     # TODO: Add method missing
   end

@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     report_factory-rspec (0.1.0)
-      rspec
+      rspec (~> 3.5)
 
 GEM
   remote: https://rubygems.org/

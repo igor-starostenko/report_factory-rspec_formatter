@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ReportFactory
-  module RSpec
+  module Rspec
     # Defines all configurable attributes of ReportFactory::RSpec
     module Configuration
       VALID_CONFIG_KEYS = %i[url project_name auth_token].freeze
@@ -25,7 +25,8 @@ module ReportFactory
 
       def reset
         VALID_CONFIG_KEYS.each do |key|
-          send("#{key}=", Object.const_get("DEFAULT_#{key}".upcase))
+          constant_name = "DEFAULT_#{key}".upcase
+          send("#{key}=", self::Configuration.const_get(constant_name))
         end
       end
     end
