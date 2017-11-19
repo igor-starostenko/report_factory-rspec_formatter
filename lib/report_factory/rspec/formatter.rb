@@ -10,7 +10,7 @@ module ReportFactory
     # An RSpec formatter that formats json from the test run
     class Formatter < RSpec::Core::Formatters::BaseFormatter
       RSpec::Core::Formatters.register self, :message, :dump_summary,
-           :dump_profile, :stop, :seed, :close
+                                       :dump_profile, :stop, :seed, :close
 
       attr_reader :output_hash
 

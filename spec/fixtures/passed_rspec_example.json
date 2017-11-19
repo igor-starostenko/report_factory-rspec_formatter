@@ -1,0 +1,46 @@
+{
+	"version": "3.7.0",
+	"messages": [
+		"Run options: include {:user_reports_api=>true}"
+	],
+	"examples": [
+		{
+			"id": "./spec/requests/user_reports_api_spec.rb[1:1:1]",
+			"description": "is not authorized without X-API-KEY",
+			"full_description": "UserReports GET index is not authorized without X-API-KEY",
+			"status": "passed",
+			"file_path": "./spec/requests/user_reports_api_spec.rb",
+			"line_number": 27,
+			"run_time": 0.460698,
+			"pending_message": null
+		},
+		{
+			"id": "./spec/requests/user_reports_api_spec.rb[1:1:2]",
+			"description": "doesn't expose X-API-KEY",
+			"full_description": "UserReports GET index doesn't expose X-API-KEY",
+			"status": "passed",
+			"file_path": "./spec/requests/user_reports_api_spec.rb",
+			"line_number": 39,
+			"run_time": 0.055454,
+			"pending_message": null
+		},
+		{
+			"id": "./spec/requests/user_reports_api_spec.rb[1:1:3]",
+			"description": "gets all reports of the requested user",
+			"full_description": "UserReports GET index gets all reports of the requested user",
+			"status": "passed",
+			"file_path": "./spec/requests/user_reports_api_spec.rb",
+			"line_number": 44,
+			"run_time": 0.051019,
+			"pending_message": null
+		}
+	],
+	"summary": {
+		"duration": 0.569834,
+		"example_count": 3,
+		"failure_count": 0,
+		"pending_count": 0,
+		"errors_outside_of_examples_count": 0
+	},
+	"summary_line": "3 examples, 0 failures"
+}
