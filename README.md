@@ -3,7 +3,7 @@
 *ReportFactory* helps you save each of your test runs so that they are always available for reports and analytics.
 It consists of three parts:
 1. A [rails server](https://github.com/igor-starostenko/report_factory) that provides an interface via JSON API and saves your test runs in a DB;
-2. A web application which gives you an easy way to configure your test projects and reports (Currently in development);
+2. A [web dashboard](https://github.com/igor-starostenko/report_factory-web) which gives you an easy way to configure your test projects and reports;
 3. And a test formatter that automatically sends reports to the server after each test run. This repo is the formatter for RSpec.
 
 ## Installation
@@ -38,6 +38,7 @@ and configure:
 ReportFactory::RSpec.configure do |config|
   config.url = "The url of the ReportFactory server. It's 'http://0.0.0.0:3000' if you're running locally"
   config.project_name = "The name of the project that you are testing. Needs to be previously created in ReportFactory"
+  config.tags = ['Tags', 'to', 'help', 'you', 'group', 'your', 'reports']
   config.auth_token = "Your user X_API_KEY. Can be found in ReportFactory in your user information"
 end
 ```
