@@ -25,10 +25,11 @@ module ReportFactory
       end
 
       def self.format_payload(report_hash)
+        attributes = {tags: tags}.merge(report_hash)
         {
           data: {
             type: 'rspec_report',
-            attributes: report_hash
+            attributes: attributes
           }
         }
       end
@@ -43,6 +44,10 @@ module ReportFactory
 
       def self.project_name
         ReportFactory::Rspec.project_name
+      end
+
+      def self.tags
+        ReportFactory::Rspec.tags
       end
 
       def self.create_report_url

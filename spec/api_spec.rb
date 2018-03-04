@@ -7,7 +7,8 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     ReportFactory::Rspec.configure do |config|
       config.url = 'http://0.0.0.0:3000'
       config.project_name = 'webapp'
-      config.auth_token = '9e04136f-c71d-4d16-924a-216e9af08903'
+      config.tags = %w[Regression High]
+      config.auth_token = '82f551b8-dea9-4385-9c4f-d290688391cc'
     end
   end
   let(:passed_test_json) do
