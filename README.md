@@ -6,6 +6,10 @@ It consists of three parts:
 2. A [web dashboard](https://github.com/igor-starostenko/report_factory-web) which gives you an easy way to configure your test projects and reports;
 3. And a test formatter that automatically sends reports to the server after each test run. This repo is the formatter for RSpec.
 
+## Getting Started
+
+Follow these [instructions](https://github.com/igor-starostenko/report_factory/blob/master/setup/INSTRUCTIONS.md) to get *Report Factory* running with *Docker*. The configuration is ready for production.
+
 ## Installation
 
 Add this line to your application's Gemfile:
