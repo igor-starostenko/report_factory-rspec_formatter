@@ -16,7 +16,7 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     JSON.parse(File.read(File.expand_path(file_path, __FILE__)))
   end
 
-  it 'submits a passed test report to ReportFactory' do
+  it 'submits a passed test report to ReportFactory', :passed do
     response = described_class.send_report(passed_test_json)
     expect(response).to be_truthy
     expect(response.code).to eql('201')
@@ -28,7 +28,7 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     JSON.parse(File.read(File.expand_path(file_path, __FILE__)))
   end
 
-  it 'submits a failed test report to ReportFactory' do
+  it 'submits a failed test report to ReportFactory', :failed do
     response = described_class.send_report(failed_test_json)
     expect(response).to be_truthy
     expect(response.code).to eql('201')

@@ -12,7 +12,7 @@ module ReportFactory
 
       DEFAULT_AUTH_TOKEN = nil
 
-      DEFAULT_TAGS = []
+      DEFAULT_TAGS = [].freeze
 
       VALID_CONFIG_KEYS.each { |key| attr_accessor key }
 
