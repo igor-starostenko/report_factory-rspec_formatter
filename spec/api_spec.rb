@@ -7,7 +7,8 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     ReportFactory::Rspec.configure do |config|
       config.url = 'http://0.0.0.0:3000'
       config.project_name = 'webapp'
-      config.auth_token = '9e04136f-c71d-4d16-924a-216e9af08903'
+      config.tags = %w[Regression High]
+      config.auth_token = '82f551b8-dea9-4385-9c4f-d290688391cc'
     end
   end
   let(:passed_test_json) do
@@ -15,7 +16,7 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     JSON.parse(File.read(File.expand_path(file_path, __FILE__)))
   end
 
-  it 'submits a passed test report to ReportFactory' do
+  it 'submits a passed test report to ReportFactory', :passed do
     response = described_class.send_report(passed_test_json)
     expect(response).to be_truthy
     expect(response.code).to eql('201')
@@ -27,7 +28,7 @@ RSpec.describe ReportFactory::Rspec::API, :api do
     JSON.parse(File.read(File.expand_path(file_path, __FILE__)))
   end
 
-  it 'submits a failed test report to ReportFactory' do
+  it 'submits a failed test report to ReportFactory', :failed do
     response = described_class.send_report(failed_test_json)
     expect(response).to be_truthy
     expect(response.code).to eql('201')
