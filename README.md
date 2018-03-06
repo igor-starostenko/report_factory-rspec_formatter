@@ -47,7 +47,7 @@ ReportFactory::Rspec.configure do |config|
 end
 ```
 
-Then you can just simply run rspec with `--format ReportFactory::RSpec::Formatter` and your reports will be available on the server after each test run.
+Then you can just simply run rspec with `--format ReportFactory::Rspec::Formatter` and your reports will be available on the server after each test run.
 You can add that line to your `.rspec` file if you want it to be the default behavior.
 
 ## Development
