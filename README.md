@@ -33,13 +33,13 @@ Before you start using this formatter, make sure you have the [ReportFactory](ht
 To setup this formatter to work with your RSpec tests, add this to your `spec_helper.rb` file:
 
 ```ruby
-require 'report_factory-rspec'
+require 'report_factory/rspec'
 ```
 
 and configure:
 
 ```ruby
-ReportFactory::RSpec.configure do |config|
+ReportFactory::Rspec.configure do |config|
   config.url = "The url of the ReportFactory server. It's 'http://0.0.0.0:3000' if you're running locally"
   config.project_name = "The name of the project that you are testing. Needs to be previously created in ReportFactory"
   config.tags = ['Tags', 'to', 'help', 'you', 'group', 'your', 'reports']
@@ -47,7 +47,7 @@ ReportFactory::RSpec.configure do |config|
 end
 ```
 
-Then you can just simply run rspec with `--format ReportFactory::RSpec::Formatter` and your reports will be available on the server after each test run.
+Then you can just simply run rspec with `--format ReportFactory::Rspec::Formatter` and your reports will be available on the server after each test run.
 You can add that line to your `.rspec` file if you want it to be the default behavior.
 
 ## Development
