@@ -11,6 +11,7 @@ module ReportFactory
     class Formatter < RSpec::Core::Formatters::BaseFormatter
       RSpec::Core::Formatters.register self, :message, :dump_summary,
                                        :dump_profile, :stop, :seed, :close
+      SUMMARY = %i[duration example_count failure_count pending_count].freeze
 
       attr_reader :output_hash
 
@@ -51,7 +52,7 @@ module ReportFactory
       end
 
       def close(_notification)
-        return if @output_hash[:examples].empty?
+        return if @output_hash[:examples].empty? || !summary_is_valid?
         print_result(ReportFactory::Rspec::API.send_report(@output_hash))
       end
 
@@ -89,6 +90,10 @@ module ReportFactory
       def print_error(response)
         output.write 'Unfortunately the test report could not be submitted'\
                      " to ReportFactory. #{response.code}: #{response.msg}\n"
+      end
+
+      def summary_is_valid?
+        SUMMARY.all? { |param| @output_hash.dig(:summary, param) }
       end
 
       def format_example(example)
