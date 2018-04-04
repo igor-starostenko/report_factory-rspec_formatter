@@ -84,7 +84,7 @@ module ReportFactory
       end
 
       def print_success
-        output.write "Report was successfullty submitted to ReportFactory\n"
+        output.write "Report has been successfully submitted to ReportFactory\n"
       end
 
       def print_error(response)

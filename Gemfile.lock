@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    report_factory-rspec (0.2.0)
+    report_factory-rspec (0.2.2)
       rspec (~> 3.5)
 
 GEM
