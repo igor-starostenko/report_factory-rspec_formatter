@@ -1,2 +1,4 @@
 --require spec_helper --format doc
+<%if ENV['REPORT'] == 'true' %>
  --format ReportFactory::Rspec::Formatter
+ <%end%>
