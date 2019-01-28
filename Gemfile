@@ -4,5 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
+gem 'bundler', '~> 1.16'
+
 # Specify your gem's dependencies in report_factory-rspec.gemspec
 gemspec
