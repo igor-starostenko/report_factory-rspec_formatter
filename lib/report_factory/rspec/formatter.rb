@@ -48,11 +48,13 @@ module ReportFactory
 
       def seed(notification)
         return unless notification.seed_used?
+
         @output_hash[:seed] = notification.seed
       end
 
       def close(_notification)
         return if @output_hash[:examples].empty? || !summary_is_valid?
+
         print_result(ReportFactory::Rspec::API.send_report(@output_hash))
       end
 
@@ -80,6 +82,7 @@ module ReportFactory
 
       def print_result(response)
         return print_success if response.code == '201'
+
         print_error(response)
       end
 
@@ -112,6 +115,7 @@ module ReportFactory
       def format_exception(example)
         exception = example.exception
         return unless exception
+
         {
           class: exception.class.name,
           message: exception.message,

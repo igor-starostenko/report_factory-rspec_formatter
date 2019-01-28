@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'report_factory/rspec'
+require 'simplecov'
 require 'webmock/rspec'
+
+SimpleCov.start
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

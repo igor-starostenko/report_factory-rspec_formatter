@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/report_factory-rspec.svg)](https://badge.fury.io/rb/report_factory-rspec)
 [![Build Status](https://travis-ci.org/igor-starostenko/report_factory-rspec.svg?branch=master)](https://travis-ci.org/igor-starostenko/report_factory-rspec)
 [![Maintainability](https://api.codeclimate.com/v1/badges/70ff8b7c010a50c9e3c1/maintainability)](https://codeclimate.com/github/igor-starostenko/report_factory-rspec/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/70ff8b7c010a50c9e3c1/test_coverage)](https://codeclimate.com/github/igor-starostenko/report_factory-rspec/test_coverage)
 
 *ReportFactory* helps you save each of your test runs so that they are always available for reports and analytics.
 It consists of three parts:
