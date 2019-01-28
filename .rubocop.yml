@@ -1,4 +1,4 @@
-Style/BlockLength:
+Metrics:
   Exclude:
     - 'Rakefile'
     - '**/*.rake'
